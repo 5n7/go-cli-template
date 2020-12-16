@@ -32,5 +32,16 @@ archives:
       - goos: windows
         format: zip
 
+brews:
+  - tap:
+      owner: skmatz
+      name: homebrew-hello
+      token: "{{ .Env.HOMEBREW_TAP_GITHUB_TOKEN }}"
+    folder: Formula
+    homepage: https://github.com/skmatz/go-cmd-template
+    description: CLI project template for Go
+    test: |
+      system "#{bin}/hello version"
+
 release:
   prerelease: auto
